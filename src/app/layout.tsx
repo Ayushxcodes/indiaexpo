@@ -1,42 +1,78 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
+import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/base/Navbar";
 import Footer from "@/components/base/Footer";
 
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/* serif heading font */
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+
+/* body font */
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
 });
+
+
+/* mono font */
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 
 export const metadata: Metadata = {
-  title: "IndiaExpo",
-  description: "Experience the grandeur of India's largest exhibition center - where innovation meets culture, and every event is a celebration of excellence. Join us at IndiaExpo, the premier destination for unforgettable experiences and groundbreaking showcases.",
+
+  title: "India Expo Centre & Mart",
+
+  description:
+    "India Expo Centre & Mart (IEML) is NCR’s premier MICE destination offering world-class exhibition halls, convention facilities, and global event infrastructure.",
+
 };
+
+
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+
+
   return (
+
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-mono", jetbrainsMono.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        playfair.variable,
+        inter.variable,
+        jetbrainsMono.variable
+      )}
     >
-      <body className="min-h-full flex flex-col">
+
+      <body className="min-h-full flex flex-col font-body bg-white text-gray-900">
+
         <Navbar />
+
         {children}
+
         <Footer />
+
       </body>
+
     </html>
+
   );
+
 }

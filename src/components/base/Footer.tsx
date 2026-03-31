@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
 
-    <footer className="bg-white border-t border-blue-100">
+    <footer className="bg-[#0b2a55] border-t border-blue-100">
 
       <div className="max-w-7xl mx-auto px-6 py-16">
 
@@ -18,15 +18,15 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <h3 className="text-lg font-semibold text-gray-100 mb-3">
               India Expo Centre & Mart
             </h3>
 
-            <p className="text-sm text-gray-600 mb-4">
+            <p className="text-sm text-gray-100 mb-4">
               IEML · Greater Noida
             </p>
 
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-100 leading-relaxed">
               Plot No. 25–29, Knowledge Park II,<br/>
               Greater Noida, UP — 201306
             </p>
@@ -39,11 +39,11 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="font-semibold text-gray-900 mb-4">
+            <h4 className="font-semibold text-gray-100 mb-4">
               Venue
             </h4>
 
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-100">
 
               <li className="hover:text-blue-600 cursor-pointer">
                 Exhibition Halls
@@ -75,11 +75,11 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="font-semibold text-gray-900 mb-4">
+            <h4 className="font-semibold text-gray-100 mb-4">
               Events
             </h4>
 
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-100">
 
               <li className="hover:text-blue-600 cursor-pointer">
                 Upcoming Events
@@ -111,11 +111,11 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="font-semibold text-gray-900 mb-4">
+            <h4 className="font-semibold text-gray-100 mb-4">
               Company
             </h4>
 
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-100">
 
               <li className="hover:text-blue-600 cursor-pointer">
                 About IEML
@@ -151,7 +151,7 @@ export default function Footer() {
 
         {/* bottom */}
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-100">
 
           <p>
             © 2026 India Exposition Mart Limited. All rights reserved.

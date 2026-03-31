@@ -2,6 +2,20 @@
 
 import { Separator } from "@/components/ui/separator"
 import { motion } from "framer-motion"
+import { Playfair_Display, Inter } from "next/font/google"
+
+const playfair = Playfair_Display({
+  subsets:["latin"],
+  style:["normal","italic"],
+  weight:["400","500","600","700"],
+  variable:"--font-heading"
+})
+
+const inter = Inter({
+  subsets:["latin"],
+  weight:["300","400","500"],
+  variable:"--font-body"
+})
 
 export default function WhyChooseUs() {
 
@@ -38,20 +52,26 @@ export default function WhyChooseUs() {
 
   return (
 
-    <section className="py-24 bg-blue-50">
+    <section className={`${playfair.variable} ${inter.variable} py-24 bg-blue-50`}>
 
       <div className="max-w-7xl mx-auto px-6">
+
 
         {/* heading */}
 
         <div className="mb-16">
 
-          <p className="text-blue-600 font-semibold tracking-widest text-sm mb-3">
+          <p className="[font-family:var(--font-body)] text-blue-600 font-medium tracking-[0.28em] text-xs mb-3">
+
             WHY CHOOSE US
+
           </p>
 
-          <h2 className="text-4xl font-bold text-gray-900">
-            NCR's Most Trusted Venue
+
+          <h2 className="[font-family:var(--font-heading)] text-[38px] md:text-[46px] leading-[1.15] text-gray-900 tracking-[-0.02em]">
+
+            NCR's Most <span className="italic text-blue-600">Trusted Venue</span>
+
           </h2>
 
         </div>
@@ -60,7 +80,8 @@ export default function WhyChooseUs() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {/* left features */}
+
+          {/* features */}
 
           <div className="space-y-8">
 
@@ -72,22 +93,32 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex gap-5"
+                className="flex gap-5 group"
               >
 
-                <div className="text-2xl">
+                {/* icon */}
+
+                <div className="text-xl bg-white border border-blue-100 w-12 h-12 flex items-center justify-center rounded-lg shadow-sm group-hover:border-blue-500 transition">
+
                   {item.icon}
+
                 </div>
+
 
 
                 <div>
 
-                  <h3 className="font-semibold text-lg text-gray-900 mb-1">
+                  <h3 className="[font-family:var(--font-heading)] text-lg text-gray-900 mb-1 group-hover:text-blue-700 transition">
+
                     {item.title}
+
                   </h3>
 
-                  <p className="text-gray-600">
+
+                  <p className="[font-family:var(--font-body)] font-light text-gray-600 leading-relaxed">
+
                     {item.desc}
+
                   </p>
 
                 </div>
@@ -101,30 +132,40 @@ export default function WhyChooseUs() {
 
 
 
-          {/* right award card */}
+          {/* award card */}
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-8 rounded-2xl shadow-md"
+            className="bg-white p-8 rounded-2xl shadow-md border border-blue-100"
           >
 
-            <p className="text-blue-600 font-semibold mb-2">
+            <p className="[font-family:var(--font-body)] text-blue-600 font-medium mb-2 tracking-wide">
+
               National Tourism Award 2018–19
+
             </p>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+
+            <h3 className="[font-family:var(--font-heading)] italic text-2xl text-gray-900 mb-4">
+
               India's Best Standalone Convention Centre
+
             </h3>
 
-            <p className="text-gray-600 leading-relaxed">
+
+            <p className="[font-family:var(--font-body)] font-light text-gray-600 leading-relaxed">
+
               A testament to two decades of excellence in event infrastructure,
               hospitality, and international standards.
+
             </p>
+
 
 
             <Separator className="my-6 bg-blue-100" />
+
 
 
             {/* certifications */}
@@ -135,15 +176,20 @@ export default function WhyChooseUs() {
 
                 <div
                   key={i}
-                  className="text-center bg-blue-50 p-4 rounded-xl"
+                  className="text-center bg-blue-50 p-4 rounded-xl border border-blue-100"
                 >
 
-                  <p className="font-semibold text-blue-700">
+                  <p className="[font-family:var(--font-heading)] italic text-blue-700">
+
                     {cert.name}
+
                   </p>
 
-                  <p className="text-xs text-gray-600">
+
+                  <p className="[font-family:var(--font-body)] text-xs font-light text-gray-600">
+
                     {cert.label}
+
                   </p>
 
                 </div>
