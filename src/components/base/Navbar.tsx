@@ -25,7 +25,7 @@ export default function Navbar() {
 
 					<div className="flex items-center gap-4">
 						<div className="hidden md:block">
-							<Button variant="outline" size="sm" asChild>
+							<Button variant="outline" size="sm">
 								<Link href="/tickets">Get Tickets</Link>
 							</Button>
 						</div>
@@ -70,7 +70,7 @@ export default function Navbar() {
 								<Link href="#contact" onClick={() => setOpen(false)} className="px-2 py-2">Contact</Link>
 
 								<div className="pt-2">
-									<Button variant="default" size="default" asChild>
+									<Button variant="default" size="default">
 										<Link href="/tickets" onClick={() => setOpen(false)}>Get Tickets</Link>
 									</Button>
 								</div>

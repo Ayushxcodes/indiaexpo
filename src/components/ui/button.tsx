@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -41,24 +40,18 @@ const buttonVariants = cva(
   }
 )
 
-type ButtonProps = ButtonPrimitive.Props & VariantProps<typeof buttonVariants> & {
-  asChild?: boolean
-}
-
-function Button({ className, variant = "default", size = "default", asChild, children, ...props }: ButtonProps & { children?: React.ReactNode }) {
-  const classes = cn(buttonVariants({ variant, size, className }))
-
-  if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children as React.ReactElement, {
-      className: cn(classes, (children as any).props.className),
-      ...props,
-    })
-  }
-
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
   return (
-    <ButtonPrimitive data-slot="button" className={classes} {...props}>
-      {children}
-    </ButtonPrimitive>
+    <ButtonPrimitive
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
   )
 }
 
